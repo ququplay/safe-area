@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorCommunitySafeArea",
+    name: "QuquplaySafeArea",
     platforms: [.iOS(.v15)],
     products: [
         .library(
-            name: "CapacitorCommunitySafeArea",
+            name: "QuquplaySafeArea",
             targets: ["SafeAreaPlugin"])
     ],
     dependencies: [

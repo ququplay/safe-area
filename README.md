@@ -238,17 +238,28 @@ hideSystemBars(options: SystemBarsVisibilityOptions) => Promise<void>
 
 #### SystemBarsStyleOptions
 
-| Prop        | Type                                                        | Description                                                                                                                                                                                                                   | Default                |
-| ----------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| **`style`** | <code><a href="#systembarsstyle">SystemBarsStyle</a></code> | Style of the content of the system bars.                                                                                                                                                                                      | <code>'DEFAULT'</code> |
-| **`type`**  | <code><a href="#systembarstype">SystemBarsType</a></code>   | The system bar to which to apply the style. Providing `null` means it will be applied to both system bars. On iOS the home indicator cannot be styled. It will always automatically be applied a color by iOS out of the box. | <code>null</code>      |
+| Prop        | Type                                                        | Description                                     | Default                | Since |
+| ----------- | ----------------------------------------------------------- | ----------------------------------------------- | ---------------------- | ----- |
+| **`style`** | <code><a href="#systembarsstyle">SystemBarsStyle</a></code> | Style of the text and icons of the system bars. | <code>'DEFAULT'</code> | 8.0.0 |
+| **`bar`**   | <code><a href="#systembartype">SystemBarType</a></code>     | The system bar to which to apply the style.     | <code>null</code>      | 8.0.0 |
 
 
 #### SystemBarsVisibilityOptions
 
-| Prop       | Type                                                      | Description                                                                             | Default           |
-| ---------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------- | ----------------- |
-| **`type`** | <code><a href="#systembarstype">SystemBarsType</a></code> | The system bar to hide or show. Providing `null` means it will toggle both system bars. | <code>null</code> |
+| Prop            | Type                                                                | Description                                                                                         | Default             | Since |
+| --------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------- | ----- |
+| **`bar`**       | <code><a href="#systembartype">SystemBarType</a></code>             | The system bar to hide or show.                                                                     | <code>null</code>   | 8.0.0 |
+| **`animation`** | <code><a href="#systembarsanimation">SystemBarsAnimation</a></code> | The type of status bar animation used when showing or hiding. This option is only supported on iOS. | <code>'FADE'</code> | 8.0.0 |
+
+
+### Type Aliases
+
+
+#### SystemBarsAnimation
+
+Available status bar animations.  iOS only.
+
+<code>'FADE' | 'NONE'</code>
 
 
 ### Enums
@@ -256,19 +267,19 @@ hideSystemBars(options: SystemBarsVisibilityOptions) => Promise<void>
 
 #### SystemBarsStyle
 
-| Members       | Value                  | Description                                                                                                                                                                                                              |
-| ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`Dark`**    | <code>'DARK'</code>    | Light system bar content on a dark background.                                                                                                                                                                           |
-| **`Light`**   | <code>'LIGHT'</code>   | For dark system bar content on a light background.                                                                                                                                                                       |
-| **`Default`** | <code>'DEFAULT'</code> | The style is based on the device appearance or the underlying content. If the device is using dark mode, the system bars content will be light. If the device is using light mode, the system bars content will be dark. |
+| Members       | Value                  | Description                                                                                                                                                                                                              | Since |
+| ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **`Dark`**    | <code>"DARK"</code>    | Light system bar content on a dark background.                                                                                                                                                                           | 8.0.0 |
+| **`Light`**   | <code>"LIGHT"</code>   | For dark system bar content on a light background.                                                                                                                                                                       | 8.0.0 |
+| **`Default`** | <code>"DEFAULT"</code> | The style is based on the device appearance or the underlying content. If the device is using Dark mode, the system bars content will be light. If the device is using Light mode, the system bars content will be dark. | 8.0.0 |
 
 
-#### SystemBarsType
+#### SystemBarType
 
-| Members             | Value                         | Description                                                                                                                                           |
-| ------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`StatusBar`**     | <code>'STATUS_BAR'</code>     | The top status bar on both Android and iOS.                                                                                                           |
-| **`NavigationBar`** | <code>'NAVIGATION_BAR'</code> | The navigation bar on both Android and iOS. On iOS this is the "home indicator". On Android this is either the "navigation bar" or the "gesture bar". |
+| Members             | Value                        | Description                                                         | Since |
+| ------------------- | ---------------------------- | ------------------------------------------------------------------- | ----- |
+| **`StatusBar`**     | <code>"StatusBar"</code>     | The top status bar on both Android and iOS.                         | 8.0.0 |
+| **`NavigationBar`** | <code>"NavigationBar"</code> | The navigation bar (or gesture bar on iOS) on both Android and iOS. | 8.0.0 |
 
 </docgen-api>
 
@@ -306,7 +317,7 @@ In `capacitor.config.json`:
 In `capacitor.config.ts`:
 
 ```ts
-/// <reference types="@capacitor-community/safe-area" />
+/// <reference types="@ququplay/safe-area" />
 
 import { CapacitorConfig } from '@capacitor/cli';
 
